@@ -6,8 +6,7 @@ const route = (event) => {
 };
 
 const routes = {
-  "/": "/components/home.html",
-  "/login": "/components/login.html",
+  "/": "/components/login.html",
   "/patient": "/components/patient.html",
   "/rendez_vous": "/components/rendez_vous.html",
 };
@@ -23,6 +22,14 @@ const handleLocation = async () => {
   const route = routes[path] || "/components/404.html";
   const html = await fetch(route).then((data) => data.text());
   document.getElementById("main-page").innerHTML = html;
+
+  const navbar = document.getElementById("main-nav");
+  if (path === "/"){
+    navbar.style.display = "none"
+  }else{
+    navbar.style.display = "flex"
+  }
+
 };
 
 window.onpopstate = handleLocation;
