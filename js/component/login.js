@@ -61,7 +61,7 @@ export function setUpPassword () {
     };
     localStorage.setItem('clinicApp:data', JSON.stringify(data));
     alert("Mot de passe enregistré !");
-    window.location.hash = '#/login';
+    window.location.hash = '#/';
   });
 }
 
