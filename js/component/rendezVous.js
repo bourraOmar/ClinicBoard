@@ -111,7 +111,6 @@ export function initRendezVousPage() {
     e.preventDefault();
 
     if (editIndex !== null) {
-      // update only editable fields
       rvs[editIndex].duree = document.getElementById('rv-duree').value;
       rvs[editIndex].heure = document.getElementById('rv-heure').value;
       rvs[editIndex].statut = document.getElementById('rv-statut').value;
@@ -119,13 +118,11 @@ export function initRendezVousPage() {
       editIndex = null;
       rvSubmitBtn.textContent = "Créer";
 
-      // reactiver les champs pour creation suivante
       document.getElementById('rv-patient').disabled = false;
       document.getElementById('rv-praticien').disabled = false;
       document.getElementById('rv-salle').disabled = false;
       document.getElementById('rv-type').disabled = false;
     } else {
-      // creation normale
       const rvData = {
         patient: document.getElementById('rv-patient').value,
         praticien: document.getElementById('rv-praticien').value,
@@ -152,12 +149,10 @@ export function initRendezVousPage() {
     }
     if (e.target.classList.contains('edit-btn')) {
       const rv = rvs[index];
-      // remplir uniquement les champs modifiables
       document.getElementById('rv-duree').value = rv.duree;
       document.getElementById('rv-heure').value = rv.heure;
       document.getElementById('rv-statut').value = rv.statut;
 
-      // désactiver les autres champs
       document.getElementById('rv-patient').disabled = true;
       document.getElementById('rv-praticien').disabled = true;
       document.getElementById('rv-salle').disabled = true;

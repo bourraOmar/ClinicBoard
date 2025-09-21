@@ -334,8 +334,8 @@ button:hover {
 }
 
 /* =============================
-   HAMBURGER MENU
-============================= */
+    BURGER MENU
+============================ */
 .nav-toggle {
   display: none;
   flex-direction: column;

@@ -84,7 +84,6 @@ export function initFinancePage() {
   let depenses = JSON.parse(localStorage.getItem('finance:depenses')) || [];
 
   function renderTables() {
-    // Recettes
     recetteTableBody.innerHTML = recettes.map((r, i) => `
       <tr>
         <td>${r.montant}</td>
@@ -95,7 +94,6 @@ export function initFinancePage() {
       </tr>
     `).join('');
 
-    // Dépenses
     depenseTableBody.innerHTML = depenses.map((d, i) => `
       <tr>
         <td>${d.montant}</td>
@@ -117,7 +115,6 @@ export function initFinancePage() {
     soldeEl.textContent = totalRecettes - totalDepenses;
   }
 
-  // Ajouter recette
   recetteForm.addEventListener('submit', e => {
     e.preventDefault();
     const montant = document.getElementById('recette-montant').value;
@@ -131,7 +128,6 @@ export function initFinancePage() {
     renderTables();
   });
 
-  // Ajouter dépense
   depenseForm.addEventListener('submit', e => {
     e.preventDefault();
     const montant = document.getElementById('depense-montant').value;
@@ -145,7 +141,6 @@ export function initFinancePage() {
     renderTables();
   });
 
-  // Supprimer recette
   recetteTableBody.addEventListener('click', e => {
     if(e.target.classList.contains('delete-recette')){
       const index = e.target.dataset.index;
@@ -155,7 +150,6 @@ export function initFinancePage() {
     }
   });
 
-  // Supprimer dépense
   depenseTableBody.addEventListener('click', e => {
     if(e.target.classList.contains('delete-depense')){
       const index = e.target.dataset.index;
