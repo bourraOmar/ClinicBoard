@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <title>Clinic SPA</title>
-  <link rel="stylesheet" href="/style/style.css">
-</head>
-<body>
-  <nav>
-    <button class="nav-btn" data-target="home">Home</button>
-    <button class="nav-btn" data-target="patient">Patients</button>
-    <button class="nav-btn" data-target="rendezvous">Rendez-vous</button>
-    <button class="nav-btn" data-target="finance">Finance</button>
-  </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Clinic SPA</title>
+    <link rel="stylesheet" href="/style/style.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <button class="nav-btn" data-target="#/dashboard">Dashboard</button>
+      <button class="nav-btn" data-target="#/patient">Patients</button>
+      <button class="nav-btn" data-target="#/rendezvous">Rendez-vous</button>
+      <button class="nav-btn" data-target="#/finance">Finance</button>
+      <button class="nav-btn" data-target="#/login" id="loginBtn">Login</button>
+    </nav>
 
-  <div id="root"></div>
+    <div id="root"></div>
 
-  <script type="module" src="/js/route.js"></script>
-</body>
+    <script type="module" src="/js/route.js"></script>
+  </body>
 </html>
