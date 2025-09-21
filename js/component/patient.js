@@ -2,8 +2,8 @@ export function patientPage() {
     let patients = JSON.parse(localStorage.getItem('clinicApp:patients')) || [];
 
     return `
+    <h1>Patient Management</h1>
     <div class="patient-container">
-      <h2>Patient Management</h2>
 
       <form class="patient-form" id="patient-form">
         <input type="text" placeholder="Full Name" id="name" required>
